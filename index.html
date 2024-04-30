@@ -4,22 +4,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Welcome</title>
-    <style>  
-      body {
-        margin: 5;
-      }
+    <style> 
+     .link-block {
+      width: auto;
+      height: 200px;
+      background-color: lightblue;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      position: relative;
+    }
+    .link-block a {
+      position: absolute;
+    } 
+  </style>
+  <script>
+    function redirectTo(url) {
+      window.location = url;
+    }
+  </script>
     </style>
   </head>
   <body>
     <div style="
-    background-color : #5f55;
-    text-align : left ;
+    background-color : rgba(14, 110, 254, 0.333);
+    text-align : center ;
     padding :40px;
     font-size : 2px;
-    width: 200px;
+    width: auto;
     ">
-    <img src="image\emt.jpg" alt="emt" width = '200' border = "5" ,align = center  >
-    <h1> 
+    <img src="image\emt.jpg" alt="emt" width = '200' border = "5" ,align = right  >
+
     
   
     </div>
@@ -27,20 +45,24 @@
 
     
     <div style="
-    padding : 300px;
-    width :500px;
+    padding : 10px;
+    width :auto;
+    text-align: center;
     ">
       <h1>你好</h1>
       <p>欢迎来到这里</1>
       <p> make you and the world bettrer</p>
+    <div style="display: block;text-align: left;">
+      <hr>
+      <b>关于</b>
+      <p>网络最伟大的成就，本应是让获取知识的难度大大降低。</p>
+      <p>可惜，并没有。</p>
+      <p>你需要主动搜集，不断学习、实践，才能真正掌握</p>
+      <p style="text-align: center;color: aqua;"> 网络不该只是娱乐工具，更是知识的宝库。</p>
     </div>
-    <div style="
-    background-color : gray;
-    text-align : center;
-    padding :20px;
-    font-size : 10px;
-    ">
-    <p>入口<p>
+    </div>
+    <div class="link-block", onclick="redirectTo('https://www.notion.so')" style= "text-align: center;">
+      <a href="https://www.notion.so/Start-b41bf79409b24b4285fc139254b65e33?pvs=4" style=" text-align: center;"><img src="image\notion.png" alt="notion" width = 20  ,align = bottom  ><p >就从这里开始吧</p></a>
     </div>
   </body>
 </html>
