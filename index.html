@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<*!-- 网页的基本结构 --> // 写点注释
-
+<!--网页的基本信息-->
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Welcome</title>
     <style> 
+    body {/* 设置body元素内所有文字的描边效果 */
+      color: white; /* 设置文字颜色，使得描边更加突出 */
+      text-shadow: 0 0 5px #1f9aa1,0 0 50px #00ddff /* 设置描边效果 */
+      
+    }
      .link-block {
       width: auto;
-      height: 200px;
+      height: 80px;
       background-color: lightblue;
       text-align: center;
       display: flex;
@@ -29,19 +33,35 @@
     }
   </script>
     </style>
-  </head>
-  <body>
-    <div style="
-    background-color : rgba(14, 110, 254, 0.333);
-    text-align : center ;
-    padding :40px;
+  </head>  
+  <body background="image/星空.jpg"  
+  style="
+  background-attachment:fixed;
+  background-size:cover; ">
+  <!-- 顶部色块，后续导航栏 -->
+  <div margin = 0,padding = 0 style="height: 45px;width: auto; background-color: lightblue;"></div>
+  
+  <!--第一个主体盒子，头像+起始页色块-->
+    <div style = " 
+    display: flex;
+    margin: 2px;
+    align-items: center;
+    height: 230px; 
+    padding :20px;
     font-size : 2px;
-    width: auto;
-    ">
-    <img src="image\emt.jpg" alt="emt" width = '200' border = "5" ,align = right  >
-
+    width: auto; 
+    background-color: hsla(181, 89%, 43%, 0.3) ;">
+    <!--第一个块，头像-->
+    <span style="width: 100%;">
+      <img src="image\emt.jpg" alt="emt" width = 180px border = 5 style="float: left;">
+    </span>
+    <!--第二个块，起始页色块-->
+    <span style="float: right; height: 100px;width: auto;background-color: #1f9aa1; margin-left: 100px; display: flex;text-align: center;justify-content: center;align-items: center;">
+      <h1 style="font-size: 20px;">最理想的<br>浏览器起始页</h1></span>
   
     </div>
+
+
     <div style="
     padding : 10px;
     width :auto;
