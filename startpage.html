@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartPage</title>
+    <link rel="icon" href="image\lemt.jpg" type="jpg">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let at_eng //字符串变量，记录当前引擎
+        function search() { //搜索按钮绑定的函数
+            x = document.getElementById("input").value; //获取输入框的值
+            if (at_eng == "baidu") {
+            window.open("https://" + at_eng + ".com/s?q1=" + x);}
+            else if   (at_eng == "bing") {
+            window.open("https://www." + at_eng + ".com/search?q=" + x);}
+            else if  (at_eng == "google") {
+            window.open("https://" + "google.tigermed.net/" + "/search?q=" + x);}
+            // https://gg.lty.wiki/search?q=
+            // https://google.tigermed.net/search?q=
+            else if  (at_eng == "bilibili") {
+            window.open("https://search.bilibili.com/all?keyword=" + x);}
+            else {
+                window.open("https://www." + at_eng + ".com/search?q=" + x);
+            }
+        }
+        function turn_eng(engine) {
+            at_eng = engine;
+            document.getElementById("input").value = "";
+            document.getElementById("input").placeholder = engine;
+        }
+          /* 输入框监听enter */
+        addEventListener("DOMContentLoaded", function(){
+            document.getElementById("input").addEventListener("keypress", function(event)  {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("search").click();
+            }
+        });
+    });
+    </script>
+    <style>
+        /* 划分页面 */
+        .up{
+
+            height: 280px;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+        .body{
+            margin-top: 10px;
+            height: 400px;
+            text-align: center;
+        }
+        /* 调整按钮样式 */
+
+        button{
+            background-color: #4CAF50;
+            border: none;
+            margin: 5px;
+            width: 80px;
+            height: 50px;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 30px;
+            /* 悬停样式 */
+            background-color: #1795bb;
+            border-radius: 12px;
+            color: white;
+
+            text-align: center;
+            font-size: 20px;
+
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        button:hover
+        {
+        background-color: #fff;
+        color: #1795bb;
+        border: 1px solid #ccc;
+        }
+        #search span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      #search span::after {
+        content: ">";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      #search:hover span {
+        padding-right: 30px;
+      }
+      #search:hover span::after {
+        opacity: 1;
+        right: 0;
+      }
+
+        /* 调整输入框样式 */
+
+        input{
+            margin: 5px;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 30px;
+            border: 2px solid #4CAF50;
+            width: 500px;
+            height: 50px;
+
+        }
+
+        
+    </style>
+</head>
+<body onload="turn_eng('bing')">
+    .<div class="up">
+        <h1>StartPage</h1>
+        <p>Welcome to StartPage!</p>
+    <ul>
+        <button onclick="turn_eng('bing')">bing</button>
+        <button onclick="turn_eng('google')">google</button>
+        <button onclick="turn_eng('baidu')">baidu</button>
+    </ul>
+
+    <ul>
+        <button onclick="turn_eng('github')">github</button>
+        <button onclick="turn_eng('stackoverflow')">stackoverflow</button>
+        <button onclick="turn_eng('bilibili')">bilibili</button>
+    </ul>
+    </div>
+    <div class="body">
+    <input type="text" id="input">
+    <button onclick="search()" id = "search"><span>search</span></button>
+    </div>
+</body>
+</html>
