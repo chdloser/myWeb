@@ -1,8 +1,50 @@
+/* 主页的css样式 */
 body {
     /* 设置body元素内所有文字的描边效果 */
     font-size: 16px;
-    background: aliceblue;
     -webkit-text-stroke: 0.5px  ; /* Safari/Chrome */
     color: rgb(219, 199, 199); /* 设置文字颜色，使得描边更加突出 */
   }
-  
+#emt{
+  width: 100px;
+  border-radius: 10px;
+  border: 2px solid ;
+}
+#logo{
+  grid-area: "logo";
+  display: flex;
+    margin: 2px;
+    align-items: center; 
+    padding :20px;
+    font-size : 2px;
+    width: auto; 
+    background-color: hsla(181, 89%, 43%, 0.3) ;
+}
+#text{
+  background: #000;
+  text-align: center;
+  grid-area: text;
+}
+#win{
+  grid-area:win;
+
+  background: aliceblue;
+}
+#right{
+  grid-area: right;
+  padding-top: 50px;
+}
+.main{
+  margin: 5px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+  "logo win right"
+  "text win right"
+  "text win right";
+  background-color: hsl(180, 100%, 50%,0.5);
+  grid-gap: 3px;
+
+}

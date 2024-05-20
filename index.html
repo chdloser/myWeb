@@ -5,23 +5,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image\lemt.jpg" type="jpg">
     <style> 
     body {/* 设置body元素内所有文字的描边效果 */
       color: white; /* 设置文字颜色，使得描边更加突出 */
-      text-shadow: 0 0 5px #1f9aa1,0 0 50px #00ddff /* 设置描边效果 */
+      text-shadow: 0 0 5px #1f9aa1,0 0 50px #00ddff /* 设置描边效果 */;
+      margin: 0; /* 去掉body元素的默认外边距 */
+      padding: 0; /* 去掉body元素的默认内边距 */
       
     }
-     .link-block {
+    .colitem {
       width: auto;
       height: 80px;
       background-color: lightblue;
       text-align: center;
-      display: flex;
-      justify-content: center;
       align-items: center;
-      text-decoration: none;
       color: black;
-      position: relative;
+      margin-top: 50px;
     }
     .link-block a {
       position: absolute;
@@ -40,37 +41,39 @@
   background-attachment:fixed;
   background-size:cover; ">
   <!-- 顶部色块，后续导航栏 -->
-  <div margin = 0,padding = 0 style="height: 45px;width: auto; background-color: lightblue;"></div>
-  
-  <!--第一个主体盒子，头像+起始页色块-->
-    <div style = " 
-    display: flex;
-    margin: 2px;
-    align-items: center;
-    height: 230px; 
-    padding :20px;
-    font-size : 2px;
-    width: auto; 
-    background-color: hsla(181, 89%, 43%, 0.3) ;">
-    <!--第一个块，头像-->
+  <div style="margin : 0 ;padding : 0 ;height: 45px;width: auto; background-color: lightblue;"></div>
+  <div class="main">
+  <!--上方主容器，网格布局-->
+    <!--第一个区域，头像-->
+    <div id = "logo">
     <span style="width: 100%;">
-      <img src="image\emt.jpg" alt="emt" width = 180px border = 5 style="float: left;">
+      <img src="image\emt.jpg" alt="emt" id = "emt">
     </span>
-    <!--第二个块，起始页色块-->
-    <span style="float: right; height: 100px;width: auto;background-color: #1f9aa1; margin-left: 100px; display: flex;text-align: center;justify-content: center;align-items: center;">
-      <button style="font-size: 20px;" onclick="redirectTo('startpage.html')">最理想的<br>浏览器起始页</button></span>
-  
+  </div>
+    <!--第二个块，头像下方的简介框-->
+    <div id="text">
+      say something about me here
+      <h1>你好</h1>
+      <p>欢迎来到这里</1>
+      <p> make you and the world bettrer</p>
     </div>
+    <!-- 主窗口 -->
+    <div id=win>
 
+    </div>
+    <div id="right">
+      <button  calss= "colitem"onclick="redirectTo('startpage.html')">最理想的<br>浏览器起始页</button>
+      <div class="colitem", onclick="redirectTo('https://www.notion.so')" style= "text-align: center;">
+        <a href="https://www.notion.so/Start-b41bf79409b24b4285fc139254b65e33?pvs=4" style=" text-align: center;"><img src="image\notion.png" alt="notion" width = 20  ,align = bottom  ><p >就从这里开始吧</p></a>
+      </div>
+    </div>
+    </div><!--上方主容器结束-->
 
     <div style="
     padding : 10px;
     width :auto;
     text-align: center;
     ">
-      <h1>你好</h1>
-      <p>欢迎来到这里</1>
-      <p> make you and the world bettrer</p>
     <div style="display: block;text-align: left;">
       <hr>
       <b>关于</b>
@@ -79,9 +82,6 @@
       <p>你需要主动搜集，不断学习、实践，才能真正掌握</p>
       <p style="text-align: center;color: aqua;"> 网络不该只是娱乐工具，更是知识的宝库。</p>
     </div>
-    </div>
-    <div class="link-block", onclick="redirectTo('https://www.notion.so')" style= "text-align: center;">
-      <a href="https://www.notion.so/Start-b41bf79409b24b4285fc139254b65e33?pvs=4" style=" text-align: center;"><img src="image\notion.png" alt="notion" width = 20  ,align = bottom  ><p >就从这里开始吧</p></a>
     </div>
   </body>
 </html>

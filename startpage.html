@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StartPage</title>
     <link rel="icon" href="image\lemt.jpg" type="jpg">
-    <link rel="stylesheet" href="style.css">
     <script>
+        function turn_logo_pic(logo_name){
+            document.getElementById("logo").src = "./image/logo/" + logo_name + ".jpg";
+        }
         let at_eng //字符串变量，记录当前引擎
         function search() { //搜索按钮绑定的函数
             x = document.getElementById("input").value; //获取输入框的值
@@ -15,9 +17,12 @@
             else if   (at_eng == "bing") {
             window.open("https://www." + at_eng + ".com/search?q=" + x);}
             else if  (at_eng == "google") {
-            window.open("https://" + "google.tigermed.net/" + "/search?q=" + x);}
+            window.open("https://" + "gsearch.g.shellten.top" + "/search?q=" + x);}
             // https://gg.lty.wiki/search?q=
             // https://google.tigermed.net/search?q=
+            //https://rs.http3.lol/index.php?q=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8
+            //https://gsearch.g.shellten.top/search?q=
+            //https://3064254.xyz/?_ebfd=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9zZWFyY2g&q=
             else if  (at_eng == "bilibili") {
             window.open("https://search.bilibili.com/all?keyword=" + x);}
             else {
@@ -28,7 +33,8 @@
             at_eng = engine;
             document.getElementById("input").value = "";
             document.getElementById("input").placeholder = engine;
-        }
+            turn_logo_pic(engine);
+    }
           /* 输入框监听enter */
         addEventListener("DOMContentLoaded", function(){
             document.getElementById("input").addEventListener("keypress", function(event)  {
@@ -40,6 +46,15 @@
     });
     </script>
     <style>
+        body{
+            margin: 0;
+            font-size: 16px;
+            -webkit-text-stroke: 0.5px  ; /* Safari/Chrome */
+            color: rgb(219, 199, 199); /* 设置文字颜色，使得描边更加突出 */
+        }
+        .test{
+            background: #e00fdc;
+        }
         /* 划分页面 */
         .up{
 
@@ -49,7 +64,6 @@
         }
         .body{
             margin-top: 10px;
-            height: 400px;
             text-align: center;
         }
         /* 调整按钮样式 */
@@ -115,11 +129,27 @@
             height: 50px;
 
         }
-
-        
+        #lemt{
+            border-radius: 30%;
+        }
+        #pic{
+            /* display: inline-block; */
+            width: 50%;
+            height: 30vh;
+            margin:0 auto 0 auto;
+            text-align: center;
+            vertical-align: middle;
+        }
+        #pic #logo{
+            display: block;
+            margin: auto;
+            max-height: fit-content;
+            width: 60%;
+            padding: 0;
+        }
     </style>
 </head>
-<body onload="turn_eng('bing')">
+<body onload="turn_eng('google')">
     .<div class="up">
         <h1>StartPage</h1>
         <p>Welcome to StartPage!</p>
@@ -138,6 +168,9 @@
     <div class="body">
     <input type="text" id="input">
     <button onclick="search()" id = "search"><span>search</span></button>
+    </div>
+    <div  id = "pic">
+        <img id="logo" src="./image/logo/google.jpg" >
     </div>
 </body>
 </html>
