@@ -7,7 +7,7 @@
     <link rel="icon" href="image\lemt.jpg" type="jpg">
     <script>
         function turn_logo_pic(logo_name){
-            document.getElementById("logo").src = "./image/logo/" + logo_name + ".jpg";
+            document.getElementById("logo").src = "./image/logo/" + logo_name + ".png";
         }
         let at_eng //字符串变量，记录当前引擎
         function search() { //搜索按钮绑定的函数
@@ -46,7 +46,10 @@
     });
     </script>
     <style>
-        body{
+        body{  
+            background: url(https://api.dujin.org/bing/1366.php) rgba(0, 0, 0, .5) no-repeat center center;
+            background-size:cover;  /* 让背景图基于容器大小伸缩 */
+            background-attachment:fixed; 
             margin: 0;
             font-size: 16px;
             -webkit-text-stroke: 0.5px  ; /* Safari/Chrome */
@@ -60,7 +63,6 @@
 
             height: 280px;
             text-align: center;
-            background-color: #f2f2f2;
         }
         .body{
             margin-top: 10px;
@@ -166,7 +168,7 @@
     </ul>
     </div>
     <div class="body">
-    <input type="text" id="input">
+    <input type="text" id="input" autofocus>
     <button onclick="search()" id = "search"><span>search</span></button>
     </div>
     <div  id = "pic">
