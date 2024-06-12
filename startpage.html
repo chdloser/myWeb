@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StartPage</title>
     <link rel="icon" href="image\lemt.jpg" type="jpg">
+    <script type="text/javascript" src="change_wallpaper.js"></script>
     <script>
         function turn_logo_pic(logo_name){
             document.getElementById("logo").src = "./image/logo/" + logo_name + ".png";
@@ -48,12 +49,22 @@
     <style>
         body{  
             background: url(https://api.dujin.org/bing/1366.php) rgba(0, 0, 0, .5) no-repeat center center;
+            /* https://bing.img.run/rand_uhd.php */
             background-size:cover;  /* 让背景图基于容器大小伸缩 */
             background-attachment:fixed; 
             margin: 0;
             font-size: 16px;
             -webkit-text-stroke: 0.5px  ; /* Safari/Chrome */
             color: rgb(219, 199, 199); /* 设置文字颜色，使得描边更加突出 */
+        }
+        h1{
+            color: #f8c26ad1;
+            font-size: 40px;
+            text-shadow: #3b4651 5px; /* 设置阴影 */
+        }
+        p{
+            color: #96fffa;
+            text-shadow: #3b4651 5px; /* 设置阴影 */
         }
         .test{
             background: #e00fdc;
@@ -71,7 +82,6 @@
         /* 调整按钮样式 */
 
         button{
-            background-color: #4CAF50;
             border: none;
             margin: 5px;
             width: 80px;
@@ -90,18 +100,23 @@
             -webkit-transition-duration: 0.4s;
             transition-duration: 0.4s;
             cursor: pointer;
+            overflow: hidden;
+            z-index: 0;
         }
         button:hover
         {
         background-color: #fff;
         color: #1795bb;
         border: 1px solid #ccc;
+        overflow: visible;
+        z-index: 2; 
         }
         #search span {
         cursor: pointer;
         display: inline-block;
         position: relative;
         transition: 0.5s;
+        
       }
       #search span::after {
         content: ">";
@@ -149,6 +164,59 @@
             width: 60%;
             padding: 0;
         }
+        .reset_box{
+            float: right;
+            text-align: center;
+        }
+        .hide{
+            margin: 0;
+            display: none;
+        }
+        .cw:hover +.hide {
+  display: block;
+}
+        #change_wallpaper{
+            float: right;
+            width: 50px;
+            /* background: white; */
+            background:whitesmoke;
+            margin: 20px;
+            margin-bottom:  1px; ;
+            border-radius: 42%;
+        }
+        #reset{
+            width: 30px;
+            width: 30px;}
+        #change_wallpaper:hover{
+        
+        background-size: cover;
+        display: inline-block;
+        height: 50px;
+        vertical-align:middle;
+        animation: spin 1s infinite linear;
+        -moz-animation: spin 1s infinite linear;
+        -webkit-animation: spin 1s infinite linear; 
+        -o-animation : refreshing 1s infinite linear;
+        }
+        @-moz-keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+
+        @-webkit-keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+
+        @-o-keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body onload="turn_eng('google')">
@@ -174,5 +242,9 @@
     <div  id = "pic">
         <img id="logo" src="./image/logo/google.jpg" >
     </div>
+    <div class="reset_box">
+    <button id="change_wallpaper" class= "cw"onclick="change_wallpaper()"><img src="https://ts1.cn.mm.bing.net/th/id/R-C.4dad40098224d1fe7115996e0ca8db23?rik=DQ4g7XYUNbOi6Q&riu=http%3a%2f%2fwww.kuaipng.com%2fUploads%2fpic%2fw%2f2020%2f09-05%2f91649%2fwater_91649_698_698_.png&ehk=tBgkUksaPz0NiQW%2fSInwd1r17khOR0snRWuP8xH6iWY%3d&risl=&pid=ImgRaw&r=0" id="reset"></button>
+    <p class="hide">刷新背景</p>
+</div>
 </body>
 </html>
