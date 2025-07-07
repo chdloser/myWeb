@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setting</title>
+</head>
+<style>
+    body{
+        background-color: #f5f5f5;
+        font-family: "Microsoft YaHei", sans-serif;
+        font-size: 30px;
+        text-align: center;
+        margin: auto;
+        padding: auto;
+    }
+</style>
+<body onload="restart()">
+    <form onsubmit="cha">
+    谷歌镜像选择：
+    <select title="ggmirror" name="ggmirror" id="ggmirror">
+        <option  name=0 value=0>0</option>
+        <option name=1 value=1>1</option>
+        <option name=1 value=2>2</option>
+    </select>
+    <br>
+    壁纸源选择：
+    <select name="papermirror" id="papermirror">
+        <option name =0 value="0">bing每日壁纸</option>
+        <option name =0 value="1">二次元美图</option>
+        <option name =0 value="2">二次元风景</option>
+        <option name =0 value="3">纯色背景</option>
+        <option name =0 value="4">随机壁纸1</option>
+        <option name =0 value="5">随机壁纸2</option>
+    </select>
+    <br>
+    
+    </form><button  onclick="submit()"> 提交</button>
+</body>
+<script>
+   
+    function restart(){
+        var ggmirror = localStorage.getItem("ggmirror");
+        var papermirror = localStorage.getItem("papermirror");
+        var opts=document.getElementById("ggmirror").options; //得到select中的选项数组
+        if(ggmirror!= null){
+            opts[Number(ggmirror)].selected=true;
+        }
+        if(papermirror!= null){
+            var osel=document.getElementById("papermirror").options; //得到select的ID
+            osel[Number(papermirror)].selected=true;
+        }
+    }
+    
+  function submit(){
+    localStorage.setItem("name", "jay");
+    alert("提交成功");
+    localStorage.setItem("ggmirror", document.getElementById("ggmirror").value);
+    localStorage.setItem("papermirror",  document.getElementById("papermirror").value);
+  }
+</script>
+</html>
