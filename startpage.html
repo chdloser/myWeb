@@ -38,9 +38,11 @@
         }
         function turn_eng(engine) {
             at_eng = engine;
-            x = document.getElementById("input").value; //获取输入框的值        
+            const input = document.getElementById("input");
+            x = input.value; //获取输入框的值        
             document.getElementById("input").placeholder = engine;
             turn_logo_pic(engine);
+            input.focus();
     }
           /* 输入框监听enter */
         addEventListener("DOMContentLoaded", function(){
